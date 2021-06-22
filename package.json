@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "分开打包页面，基于vue",
   "private": true,
-  "main": "vueprod",
+  "main": "vueprod.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
+    "dev:m:p": "node vueprod.js dev -t module -m logger",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
