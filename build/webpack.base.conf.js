@@ -1,5 +1,5 @@
 const path = require('path');
-const {VueLoaderPlugin} = require('vue-loader');
+const { VueLoaderPlugin } = require('vue-loader')
 // const utils = require('./utils');
 const config = require('../config');
 const env = process.env.NODE_ENV || 'development';

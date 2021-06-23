@@ -1,0 +1,44 @@
+// $fontColor:#282828;
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 100;
+  src: local("PingFang SC Thin");
+}
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 300;
+  src: local("PingFang SC Light");
+}
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 400;
+  src: local("PingFang SC Regular");
+}
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 500;
+  src: local("PingFang SC Medium");
+}
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 700;
+  src: local("PingFang SC Semibold");
+}
+
+@font-face {
+  font-family: "PingFang-SC";
+  font-weight: 800;
+  src: local("PingFang SC Heavy");
+}
+
+body {
+  font-family: system, -apple-system, BlinkMacSystemFont,
+  "PingFang SC", "Segoe UI", "Microsoft YaHei", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $fontColor;
+}

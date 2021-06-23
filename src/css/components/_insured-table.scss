@@ -1,0 +1,58 @@
+// 被保人表
+
+// 导入配置
+// @import "../config";
+
+.box-table-insured {
+
+
+  .bti-header {
+    padding: 8px 24px;
+    background: #F9F9F9;
+    border: 1px solid #E2E2E2;
+    border-bottom: none;
+
+    @include clearfix();
+
+    .el-button{
+      min-width: 118px;
+    }
+
+    .align-left {
+      float: left;
+    }
+
+    .align-right {
+      float: right;
+      margin-left: 32px;
+    }
+  }
+
+  .bti-body{
+    border: 1px solid #E2E2E2;
+  }
+
+  .bti-footer{
+    margin-top: 20px;
+  }
+}
+
+.table-insured{
+
+  .el-table__body {
+    width: 100%;
+  }
+
+  .el-date-editor.el-input, .el-date-editor.el-input__inner{
+    width: inherit;
+  }
+
+  .box-oper{
+    > a {
+      cursor: pointer;
+      color: #707070;
+    }
+  }
+
+
+}

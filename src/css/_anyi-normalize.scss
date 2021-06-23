@@ -1,0 +1,56 @@
+// @import "config";
+
+[v-cloak] {
+  display: none;
+}
+
+ul,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+tbody,table,th,td,tr {
+  border-collapse:collapse;
+  border-spacing:0;
+  padding: 0;
+  margin: 0
+}
+
+
+a {
+  text-decoration: none;
+  color: $themeColor;
+
+  &:link {
+    color: $themeColor;
+  }
+
+  &:active {
+    color: $themeColor;
+  }
+
+  &:valid {
+    color: $themeColor;
+  }
+}
+
+.w-100{
+  width: 100% !important;
+}
+
+.dialog-doc{
+  color: $fontColor;
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  p {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,185 @@
+
+// 首页 banner
+@import "banner";
+
+// 相关配置
+// @import "config";
+
+// 两段注意事项
+.box-notes{
+  background: #fff;
+  box-shadow:0 4px 6px 0 $boxShadowColor;
+  margin-top: 32px;
+  padding: 30px 30px 20px 30px;
+}
+
+.box-note-item{
+  padding-bottom: 30px;
+
+  h3 {
+    font-size: 18px;
+    line-height: 25px;
+    margin: 20px 0;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    line-height: 28px;
+    font-size: 14px;
+  }
+}
+
+.box-claims {
+  padding: 31px 0 36px 0;
+  background: linear-gradient(-165.2deg, $headerSkipColor, $themeColor);
+  box-shadow: 0 4px 6px 0 $boxShadowColor;
+
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: #fff;
+    line-height: 25px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 30px;
+  }
+}
+
+.list-claims {
+  @include clearfix();
+
+  > li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+
+    .lc-icon {
+      width: 35px;
+      height: 35px;
+      margin: 28px auto 18px auto;
+    }
+
+    p {
+      margin: 0;
+      line-height: 22px;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 100
+    }
+
+    .lc-line{
+      content: '';
+      display: block;
+      width: 85px;
+      border-top: 1px dashed #fff;
+      position: absolute;
+      right: 15px;
+      top: 45px;
+      bottom: 0;
+      margin: auto;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: -15px;
+        width: 9px;
+        height: 9px;
+        background: transparent;
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        transform: rotate(-135deg);
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 85px;
+        border-top: 1px dashed #fff;
+        position: absolute;
+        right: -115px;
+        top: -1px;
+        bottom: 0;
+      }
+    }
+  }
+
+  &.list-claims-5 {
+    > li {
+      width: 20%;
+
+      .lc-line{
+        width: 60px;
+
+        &::after {
+          width: 60px;
+          right: -90px;
+        }
+      }
+    }
+  }
+
+  &.list-claims-4 {
+    > li {
+      width: 25%;
+    }
+  }
+
+  &.list-claims-3 {
+    > li {
+      width: 33.3333%;
+    }
+  }
+
+  &.list-claims-2 {
+    > li {
+      width: 50%;
+    }
+  }
+
+  &.list-claims-1 {
+    > li {
+      width: 100%;
+    }
+  }
+
+}
+
+.box-price-right{
+  .el-form-item__label{
+    // line-height: 24px;
+  }
+  .el-select .el-input .el-select__caret{
+    color: #a0a0a0
+  }
+
+  .bp-price {
+    text-align: right;
+    font-size: 16px;
+    span {
+      font-size: 36px;
+      margin-right: 2px;
+    }
+    color: $priceColor;
+  }
+
+  .bp-doc{
+    line-height: 28px;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+

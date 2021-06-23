@@ -223,25 +223,21 @@ const baseRunConfig = {
     products,
     mode
   });
-
   // 构建后打开路径
   let openPath = '';
   if (products.length > 0) {
     openPath = openPath + products[0].entry[0].filename;
   }
-
+  console.log('-----openPath-----', openPath)
   // 产品ID
   const productId = products.map(p => p.id).join(',');
-
   // webpack compiler 实例
   const compiler = productWebpack.getWebpackCompiler();
-
   const productServer = new ProductServer({
     openPath,
     productId,
     compiler
   });
-
   return productServer.run();
 };
 

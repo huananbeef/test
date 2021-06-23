@@ -1,0 +1,63 @@
+// @import "config";
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  ::before,::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+
+html {
+  background: $htmlBackground;
+  font-size: 14px;
+}
+
+.clearfix{
+  @include clearfix()
+}
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.center{
+  text-align: center;
+}
+
+.page-main{
+  //padding-bottom: 48px;
+}
+
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.red{
+  color: $priceColor
+}
+.center{
+  text-align:center !important;
+}
+
+.app-main{
+
+}
+
+

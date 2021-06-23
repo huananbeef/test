@@ -1,0 +1,179 @@
+
+// @import "config";
+
+.page-write{
+  padding-top: 90px;
+}
+
+
+.header-skip {
+  height: 64px;
+  position: relative;
+  background: #fff;
+  border-bottom: 3px solid $headerSkipColor;
+  padding-left: 338px;
+  box-shadow:0px 4px 6px 0px $boxShadowColor;
+
+  .hs-title {
+    position: absolute;
+    width: 338px;
+    height: 74px;
+    left: 0;
+    bottom: -3px;
+
+    .hs-title-bg {
+      display: block;
+      position: absolute;
+      width: 308px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(-143.1deg, $headerSkipColor, $themeColor);
+      border-radius: 0px 15px 0px 0px;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 10px;
+        width: 338px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(-143.1deg, $headerSkipColor, $themeColor);
+        z-index: 1;
+      }
+
+      &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 61px solid #fff;
+        border-left: 30px solid transparent;
+        top: 10px;
+        z-index: 2;
+        right: -30px;
+      }
+    }
+
+    > h3 {
+      font-weight: normal;
+      margin: 0;
+      line-height: 64px;
+      font-size: 20px;
+      color: #fff;
+      padding-left: 30px;
+      position: relative;
+      z-index: 3;
+      margin-top: 10px;
+    }
+  }
+
+  .hs-list {
+    @include clearfix();
+    height: 64px;
+    padding-left: 50px;
+    overflow: hidden;
+    counter-reset: section;
+
+    > li {
+      float: left;
+      width: auto;
+      line-height: 64px;
+      padding-right: 124px;
+      font-size: 0;
+      color: $headerSkipBorderColor;
+      counter-increment: section;
+      position: relative;
+
+      > span {
+        vertical-align: middle;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+
+      &::before {
+        content: counter(section);
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        border: 1px solid $headerSkipBorderColor;
+        border-radius: 100%;
+        vertical-align: middle;
+        font-size: 20px;
+        color: $headerSkipBorderColor;
+        line-height: 24px;
+        text-align: center;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100px;
+        border-top: 1px solid $headerSkipBorderColor;
+        position: absolute;
+        right: 13px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &:last-of-type {
+        padding-right: 35px !important;
+        &::after {
+          display: none;
+        }
+      }
+
+      &.active {
+        color: $fontColor;
+
+        &::before {
+          background: $themeColor;
+          color: #fff;
+          border-color: $themeColor;
+        }
+      }
+    }
+    >li.el-icon-circle-check::before{
+      content: "\E639" !important;
+      background: #fff;
+      width: 28px;
+      height: 28px;
+      color: $themeColor;
+      font-size: 31px;
+      border:none;
+      padding-top: 3px;
+    }
+
+    &.hs-list-3 {
+      > li {
+        padding-right: 233px;
+
+        &:after{
+          width: 198px;
+          right: 10px;
+        }
+      }
+    }
+    &.hs-list-5 {
+      > li {
+        padding-right: 60px;
+
+        &:after{
+          width: 40px;
+          right: 10px;
+        }
+      }
+    }
+  }
+
+}
+
+// 表单相关样式 写在了 _form.scss中
+
+
+

@@ -1,0 +1,28 @@
+// 发票
+
+// 导入配置
+// @import "../config";
+
+.tab-invoice-tit{
+  @include clearfix();
+  margin: 30px 0;
+
+  > li {
+    width: 180px;
+    height: 42px;
+    background-color: #F9F9F9;
+    border: 2px solid #dddddd;
+    line-height: 38px;
+    text-align: center;
+    margin-right: 24px;
+    float: left;
+    cursor: pointer;
+    background: url(../images/components/right-0.png) no-repeat right bottom;
+    background-position: 148px 10px;
+
+    &.active{
+      background-image: url(../images/components/right-1.png);
+      border-color: $themeColor;
+    }
+  }
+}

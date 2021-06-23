@@ -5,9 +5,13 @@
   "private": true,
   "main": "vueprod.js",
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "build:test": "cross-env NODE_ENV=production node vueprod.js test",
+    "dev": "node vueprod.js dev",
+    "dev:m": "node vueprod.js dev -t module",
     "dev:m:p": "node vueprod.js dev -t module -m logger",
-    "build": "vue-cli-service build",
+    "build": "cross-env NODE_ENV=production node vueprod.js build",
+    "build:test:m": "cross-env NODE_ENV=production node vueprod.js test -t module",
+    "build:m": "cross-env NODE_ENV=production node vueprod.js build -t module",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -31,9 +35,25 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
+    "commander": "^7.2.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^8.1.1",
+    "internal-ip": "^3.0.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^6.1.0",
+    "sass-loader": "^7.1.0",
+    "vue-loader": "^15.9.7",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.3.1"
   },
   "eslintConfig": {
     "root": true,

@@ -1,0 +1,108 @@
+// 三张产品图片
+
+// 导入配置
+// @import "../config";
+
+.box-product-img{
+  margin-top: 32px;
+}
+
+.list-prod-img{
+  @include clearfix();
+
+  ul,li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.pi-left {
+  float: left;
+
+  > li {
+    margin-bottom: 21px;
+    width: 238px;
+    height: 178px;
+    // overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px 0 $boxShadowColor;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      content: '';
+    }
+
+    &::after{
+      width: 0;
+      height: 0;
+      border-top: 16px solid transparent;
+      border-left: 20px solid $themeColor;
+      border-bottom: 16px solid transparent;
+      display: none;
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 0;
+      margin: auto;
+      bottom: 0;
+    }
+
+    &.active{
+      &::before{
+        border: 4px solid $themeColor;
+        display: block;
+      }
+
+      &::after{
+        display: block;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+}
+
+.pi-right {
+  float: right;
+  width: 918px;
+  height: 576px;
+  box-shadow: 0 4px 6px 0 $boxShadowColor;
+  position: relative;
+  overflow: hidden;
+
+  // 为支持阴影不被 hidden
+
+  > ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    transition: top .3s ease-in-out;
+
+    > li {
+      position: relative;
+      height: 100%;
+
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

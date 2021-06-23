@@ -1,0 +1,30 @@
+/*
+ * 跟组件无关的公共样式放这里
+ * 修改会影响所有产品
+ * 跟组件相关的样式写在组件中
+ */
+@import "config";
+// 统一浏览器常见样式，使用开源的normalize，只重置了部分样式
+@import "normalize";
+// 安逸normalize，适用于项目的重置浏览器样式
+@import "anyi-normalize";
+// element样式覆盖
+@import "el-override";
+// 设置字体
+@import "font";
+// 设置字体图标
+@import "iconfont";
+// 布局相关样式
+@import "layout";
+// 表单样式
+@import "form";
+// 组件样式
+@import "components";
+// 产品介绍页
+@import "page-index";
+// 投保页
+@import "page-write";
+// 文档页
+@import "page-doc";
+// 支付页面样式
+@import "page-pay";

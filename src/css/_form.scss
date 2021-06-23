@@ -1,0 +1,186 @@
+// @import "config";
+
+.form-section{
+  > h4 {
+    font-size: 18px;
+    color: $fontColor;
+    line-height: 25px;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 16px;
+
+    small {
+      font-size: 14px;
+      margin-left: 12px;
+      font-weight: normal;
+
+    }
+  }
+  margin-bottom: 40px;
+
+  .form-desc{
+    font-size: 14px;
+    line-height: 32px;
+    color: #707070;
+    &.indent{
+      text-indent: -43px;
+      padding-left: 43px;
+    }
+  }
+}
+
+.box-form {
+  box-shadow: 0 4px 6px 0 $boxShadowColor;
+  background: #fff;
+  padding: 30px;
+  position: relative;
+
+  .form-row{
+    @include clearfix();
+
+    &.form-row-3{
+      .form-col {
+        width: 33.33%;
+        float: left;
+
+        &:nth-of-type(2){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .form-col {
+    width: 420px;
+    float: left;
+
+    &:nth-of-type(2){
+      margin-left: 72px;
+    }
+  }
+
+
+}
+
+.input-tips{
+  line-height: 25px;
+  color: #707070;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #ddd;
+}
+
+.box-submit{
+  margin-top: 40px;
+  text-align: right;
+
+  .bs-price{
+    span{
+      color: $priceColor;
+      font-size: 24px;
+      margin-left: 10px ;
+      &.size-36{
+        font-size: 36px;
+      }
+    }
+  }
+
+  .bs-btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    > button{
+      width: 180px;
+
+    }
+
+  }
+}
+
+
+.table-profile{
+  width: 100%;
+  border-collapse: collapse;
+
+  thead{
+
+  }
+
+  tbody{
+    td{
+      height: 46px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &:nth-of-type(odd){
+        text-align: right;
+        color: #707070;
+        min-width: 110px;
+        width:110px;
+      }
+
+      &:nth-of-type(even){
+        min-width: 200px;
+      }
+    }
+  }
+
+  &.table-col-1 {
+    tbody {
+      td {
+        &:nth-of-type(odd) {
+          width: 110px;
+        }
+      }
+    }
+  }
+
+ /* colgroup {
+
+    col.td-key {
+      min-width: 110px;
+    }
+
+    col.td-val {
+      min-width: 200px;
+    }
+  }*/
+}
+
+.table-border{
+  border:1px solid #e2e2e2;
+
+  th{
+    background-color: #F9F9F9;
+  }
+
+  td, th.is-leaf{
+    border-bottom-color: #e2e2e2;
+  }
+}
+
+.third_check{
+  display: block;
+  width:150px;
+  font-size:18px;
+  height: 24px;
+  line-height: 24px;
+  input[type='checkbox']{
+    float: left;
+    height: 24px;
+    padding-left:40px;
+    background: url('../images/icon/check.png') left center no-repeat;
+    background-size: 24px;
+    -webkit-appearance:none;
+    outline: none;
+  }
+  input[type='checkbox']:checked{
+    background: url("../images/icon/checked.png")no-repeat left center;
+    background-size: 24px;
+  }
+
+}

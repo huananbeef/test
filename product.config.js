@@ -16,7 +16,7 @@ const internalIp = require('internal-ip');
 // 前端静态化插件 
 // const PrerenderSpaPlugin = require('prerender-spa-plugin');
 // css分包
-const MiniCssExtractPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 拷贝静态文件
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 // node环境 用于构建
@@ -57,6 +57,7 @@ class ProductServer{
       throw new Error('必须传webpack compiler');
     }
     this.options = options || {};
+    console.log('----this.options.openPath----', this.options.openPath)
     // 打开页面
     this.openPath = this.options.openPath || '';
     // 产品ID
@@ -66,7 +67,8 @@ class ProductServer{
   }
   async run(){
     const cfg = serverConfig;
-    let openPath = `http://${cfg.host}:${cfg.port}`;
+    console.log('----------', serverConfig)
+    let openPath = `http://${cfg.host}:${cfg.port}/`;
     openPath +=this.openPath;
     let devOptions = {
       // content: [__dirname],
@@ -294,7 +296,7 @@ getRules(ruleOption){
   const cssLoader = this.getCssLoader({
     sourceMap, mode
   });
-  return result.concatc(cssLoader)
+  return result.concat(cssLoader)
 }
   /**
    * 获取DefinePluginConfig 编译时可以配置的全局常量
@@ -326,10 +328,8 @@ getRules(ruleOption){
       // 公共埋点配置
       productTrack = trackConfig['common']
     }
-
     // 单款产品，只打包单款产品的配置
     params['TRACK_CONFIG'] = JSON.stringify(productTrack);
-
     return new DefinePlugin(params);
   }
   /**
@@ -357,6 +357,7 @@ getRules(ruleOption){
       let plugins = [];
       // 编译时可以配置的全局常量
       const definePlugin = this.getDefinePluginConfig({ configName, productId: entry.productId });
+      console.log('----definePlugin---', definePlugin)
       // 添加全局变量配置
       plugins.push(definePlugin);
 
@@ -559,7 +560,7 @@ class ProductConfig {
    * @param entryJs 入口js
    * @returns {Array}
    */
-  getProducts(folter,entryJs){
+  getProducts(folder,entryJs){
     if (folder === 'module') return this.getModules(folder, entryJs);
     entryJs = entryJs || 'yunbao';
     entryJs = entryJs === 'yunbao' ? 'yunbao' : entryJs;

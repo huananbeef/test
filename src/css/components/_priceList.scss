@@ -1,0 +1,394 @@
+// 保障明细
+// 图片路径是相对于css目录的，请勿相对于components目录
+
+// 导入配置
+// @import "../config";
+
+.box-price{
+  background: #fff;
+  margin-top: -70px;
+  box-shadow:0 4px 6px 0 $boxShadowColor;
+  position: relative;
+  @include clearfix();
+  padding: 40px 0 0 0;
+  font-size: 14px;
+
+  .list-price{
+    position: relative;
+    margin-bottom: 35px;
+    .plan-title{
+      position: absolute;
+      left: 0;
+      width: 180px;
+      font-weight:500;
+      color: $themeColor;
+      line-height:69px;
+      padding: 0 20px 0 30px;
+      font-size: 18px
+    }
+    .box-plan{
+      padding-left: 180px;
+    }
+
+    .box-line{
+      left: 180px;
+    }
+
+    .table-price .td-title{
+      width: 180px;
+    }
+  }
+
+  .box-plan{
+    position: relative;
+    z-index: 1;
+    @include clearfix();
+
+    .plan-item{
+      float: left;
+      padding-right: 2px;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      .plan-tit {
+        text-align: center;
+        padding: 20px 10px;
+        background: $borderColor;
+        border-radius: 6px 6px 0px 0px;
+        color: $fontColor;
+        font-size: 18px;
+        line-height: 25px;
+        cursor: pointer;
+        font-weight: 100
+      }
+
+      &.active{
+        .plan-tit {
+          padding-top: 25px;
+          margin-top: -5px;
+          background: $themeColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .box-line {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    > div {
+      float: left;
+      height: 100%;
+      position: relative;
+
+      > i {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        bottom: 0;
+        border-left: 1px solid $borderColor;
+
+        &:nth-child(2) {
+          top: auto;
+          bottom: 0;
+          left: 0;
+          right: 2px;
+          border-left: none;
+          border-bottom: 1px solid $borderColor;
+        }
+
+        &:nth-child(3) {
+          left: auto;
+          right: 2px;
+        }
+      }
+
+      &:last-of-type{
+        > i {
+          &:nth-child(3) {
+            right: 0;
+          }
+        }
+      }
+
+      &.active {
+        > i {
+          border-left: 3px solid $themeColor;
+          &:nth-child(2) {
+            border-left: none;
+            border-bottom: 3px solid $themeColor;
+          }
+        }
+      }
+    }
+  }
+
+  .line-item{
+
+  }
+}
+
+.list-price-1 {
+  .plan-item, .box-line > div {
+    width: 100%;
+  }
+}
+
+.list-price-2 {
+  .plan-item, .box-line > div {
+    width: 50%;
+  }
+}
+
+.list-price-3 {
+  .plan-item, .box-line > div {
+    width: 33.3333%;
+  }
+}
+
+.list-price-4 {
+  .plan-item, .box-line > div {
+    width: 25%;
+  }
+}
+
+.list-price-5 {
+  .plan-item, .box-line > div {
+    width: 20%;
+  }
+}
+
+.box-price-left{
+  width: 892px;
+  float: left;
+  .third-box{
+    border:1px solid $borderColor;
+    margin-left:30px;
+    overflow: hidden;
+    >div{
+      float: left;
+      height: 80px;
+      padding-left:24px;
+      >span{
+        display: block;
+        &:first-of-type{
+          color: #A0A0A0;
+          margin-bottom: 8px
+        }
+      }
+    }
+    .third-select{
+      width: 240px;
+      border-right:1px solid $borderColor;
+      padding-top:28px
+    }
+    .third-item{
+      width: 390px;
+      border-right:1px solid $borderColor;
+      padding-top:19px;
+      >span{
+
+      }
+    }
+    .third-item1{
+      padding-top:19px;
+      >span{
+        &:first-of-type{
+          margin-bottom: 5px
+        }
+        &:last-of-type{
+          color: $priceColor;
+          font-size: 18px;
+          >a{
+            color: $priceColor;
+            font-size:14px
+          }
+        }
+      }
+    }
+  }
+}
+
+.box-price-right {
+  float: right;
+  width: 308px;
+  padding: 0 30px 40px 40px;
+  margin-top:-10px;
+
+  .el-select,.el-date-editor.el-input, .el-date-editor.el-input__inner {
+    width: 100%;
+  }
+}
+
+.table-price {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  position: relative;
+
+  tr {
+    &:hover{
+      td {
+        background: #DEE8FE;
+
+        .desc-icon {
+          background: url(../images/icon/mark_hover.png) no-repeat center right !important;
+        }
+
+        &.td-price{
+          background: none;
+        }
+      }
+    }
+  }
+
+  td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+  }
+
+  .td-title {
+    padding-left: 30px;
+    padding-right: 20px;
+
+    div {
+      color: $descColor;
+      line-height: 25px;
+
+      &.tit{
+        font-weight: 600;
+        color: $fontColor;
+      }
+
+      &.desc{
+        margin-top: 6px;
+        &.desc-nowrap{
+          position: relative;
+
+          .desc-show{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            padding-right: 20px;
+          }
+
+          .desc-icon {
+            width: 16px;
+            height: 16px;
+            background: url(../images/icon/mark.png) no-repeat center right;
+            cursor: pointer;
+            position: absolute;
+            top: 6px;
+            right: 0;
+
+            &:hover{
+              background: url(../images/icon/mark_hover.png) no-repeat center right;
+
+              .desc-detail {
+                opacity: 1;
+                z-index: 3;
+                transform: translate(0, 0);
+              }
+            }
+          }
+        }
+      }
+
+      .desc-show{
+
+      }
+
+      .desc-detail{
+        opacity: 0;
+        width: 330px;
+        position: absolute;
+        top: -55px;
+        left: 36px;
+        padding: 24px;
+        background: white;
+        box-shadow: 0 2px 0 $boxShadowColor;
+        border-radius: 6px;
+        border: 1px solid $themeColor;
+        z-index: -1;
+        white-space: normal;
+        transform: translate(0, -200px);
+        transition: all 0.2s ease-in-out;
+        color: $fontColor;
+
+        &:after{
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border: 1px solid $themeColor;
+          box-shadow: 0 2px 0 $boxShadowColor;
+          border-top: none;
+          border-right: none;
+          position: absolute;
+          top: 56px;
+          left: -6px;
+          transform: rotate(45deg);
+          background-color: white;
+        }
+        // display: none;
+      }
+    }
+  }
+
+  .td-item {
+    text-align: center;
+
+    > span {
+      display: inline-block;
+    }
+
+    .tit,.tag{
+      color: #A0A0A0;
+      line-height: 20px;
+      font-weight: 100 !important
+    }
+
+    .small{
+      color: $fontColor;
+      line-height: 20px;
+      margin-top: 3px;
+    }
+
+    .small2 {
+      color: $fontColor;
+      line-height: 20px;
+      margin-top: 3px;
+      font-size: 12px;
+    }
+
+    .premium {
+      line-height: 33px;
+      font-size: 24px;
+      color: $priceColor;
+      margin-top: 6px;
+      >a{
+        color: $priceColor;
+        font-size:18px
+      }
+    }
+  }
+
+  .td-price{
+    padding-bottom: 25px;
+  }
+}
+
+.box-insured-info {
+  color: $fontColor;
+  line-height: 25px;
+  padding: 27px 30px 52px;
+  background: #FAFAFA;
+  border-top: 1px solid $borderColor;
+}

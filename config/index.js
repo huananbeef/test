@@ -1,7 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 const path = require('path')
 // 获取IP地址
-var internalIp = require('internal-ip');
+var internalIp = require('internal-ip')
 
 module.exports = {
   production: {
@@ -11,7 +11,8 @@ module.exports = {
     assetsPublicPath: '/',
     productionSourceMap: false, // 生产环境是否生成sourceMap文件
     productionGzip: false,
-    productionGzipExtensions: ['js', 'css']
+    productionGzipExtensions: ['js', 'css'],
+    bundleAnalyzerReport: process.env.npm_config_report
   },
   development: {
     port: 8088,
