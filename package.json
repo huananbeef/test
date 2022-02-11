@@ -46,7 +46,7 @@
     "inquirer": "^8.1.1",
     "internal-ip": "^3.0.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^6.1.0",
     "sass-loader": "^7.1.0",
     "vue-loader": "^15.9.7",
